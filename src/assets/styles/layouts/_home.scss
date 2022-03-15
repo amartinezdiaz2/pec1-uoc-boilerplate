@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+* CUERPO
+*/
+
+body { background-color: $verdeClaro; }
+
+h1 {
+  margin: 10px 30px;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $verdeClaro;
+
+  @media screen and (orientation: portrait) {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: $blanco;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $verdeOscuro;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  @media screen and (orientation: portrait) { font-size: 1.2rem; }
+}
+
+ul {
+  padding: 20px;
+  font-size: 1.2rem;
+  list-style: none;
+  background-color: $blanco;
+
+  @media screen and (orientation: portrait) { font-size: 1rem; }
+}
+
+li { margin-bottom: 10px; }
+
+/*
+* Bloque que abarca el título, la imagen y el bloque de datos personales
+*/
+
+.bloque1 {
+  display: flex;
+  max-height: 700px;
+
+  figure {
+    width: 300px;
+    padding: 10px;
+  }
+  
+  img {
+    width: 100%;
+    border: solid 2px $verdeBox;
+    border-radius: 30px;
+  }
+
+  div { width: 100%; }
+
+  h2 {
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+
+  @media screen and (orientation: portrait) {
+    display: initial;
+
+    h2 {
+      width: 90vw;
+      margin: auto;
+    }
+
+    figure { 
+      max-width: 200px;
+      margin: auto; 
+    }
+  }
+}
+
+/*
+* Bloque que contiene el resto de bloques de contenidos
+*/
+
+.bloque2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  max-width: 95vw;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+
+  div {
+    background-color: $blanco;
+    border: solid 2px $verdeBox;
+    border-radius: 10px;
+  }
+
+  ul {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  @media screen and (orientation: portrait){
+    display: block;
+
+    div {
+      width: 90vw;
+      margin-right: auto;
+      margin-bottom: 10px;
+      margin-left: auto;
+    }
+  }
+}
+
+/*
+* Bloque de los datos personales con botones con forma de emoticonos.
+*/
+
+.personal {
+  display: flex;
+  justify-content: space-between;
+
+  div { padding: 10px; }
+
+  ul {
+    margin-top: 10px;
+    visibility: hidden;
+    border: solid 2px $verdeBox;
+    border-radius: 20px 5px;
+  }
+
+  button {
+    border: none;
+  
+    i {
+      font-size: 1.3rem;
+      background-color: $verdeClaro;
+    }
+  }
+  
+  button i:hover { color: $acuaMarina; }
+
+  @media screen and (orientation: portrait){
+    justify-content: start;
+    max-width: 60vw;
+    margin-left: 25%;
+
+    ul {
+      position: absolute;
+      left: 15vw;
+      display: none;
+      width: 70vw;
+    }
+  }
+}
+
+/*
+* Párrafos del bloque 2 con la letra empequeñecida y orientada a la derecha.
+*/
+
+.bloque2--aling {
+  margin-top: 5px;
+  font-size: .9rem;
+  text-align: right;
+
+  @media screen and (orientation: portrait){ font-size: .8rem; }
+}
